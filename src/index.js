@@ -16,6 +16,7 @@ const resembleImages = function(pattern, cwd) {
 		const diffDir = cwd.replace('reference', 'diff');
 
 		console.log(cwd + refPath)
+		console.log(testDir + refPath)
 		console.log(diffDir + refPath)
 
 		looksSame.createDiff({
