@@ -14,7 +14,7 @@ const resembleImages = function(pattern, cwd, testfolder, difffolder) {
 	if (!fs.existsSync(difffolder)){
 		fs.mkdirSync(difffolder);
 	} else {
-		empty(difffolder, false, error);
+		empty(difffolder, false, 'error');
 	}
 
 	console.log(paths)
