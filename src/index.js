@@ -19,9 +19,9 @@ const resembleImages = function(pattern, cwd) {
 		console.log(diffPath)
 
 		looksSame.createDiff({
-			reference: refPath,
-			current: testPath,
-			diff: diffPath,
+			reference: cwd + refPath,
+			current: cwd + testPath,
+			diff: cwd + diffPath,
 			highlightColor: '#ff00ff', //color to highlight the differences
 			strict: true,//strict comparsion
 		}, function(error) {});
