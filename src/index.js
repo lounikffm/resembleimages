@@ -15,23 +15,40 @@ const resembleImages = function(pattern, cwd) {
 		const testDir = cwd.replace('reference', 'test');
 		const diffDir = cwd.replace('reference', 'diff');
 
-		console.log(cwd + refPath)
-		console.log(testDir + refPath)
-		console.log(diffDir + refPath)
+		const refPath = cwd + refPath
+		const testPath = testDir + refPath
+		const diffPath = diffDir + refPath
 
-		looksSame.createDiff({
-			reference: cwd + refPath,
-			current: testDir + refPath,
-			diff: diffDir + refPath,
-			highlightColor: '#ff00ff', //color to highlight the differences
-			strict: true,//strict comparsion
-		}, function(err) {
+		// looksSame.createDiff({
+		// 	reference: cwd + refPath,
+		// 	current: testDir + refPath,
+		// 	diff: diffDir + refPath,
+		// 	highlightColor: '#ff00ff', //color to highlight the differences
+		// 	strict: true,//strict comparsion
+		// }, function(err) {
+    //
+		// 	console.log(err);
+    //
+		// });
 
-			console.log(err);
+		looksSame(refPath, testPath, function(error, equal) {
+			if(equal !== true) {
+				console.log('diff!')
+				looksSame.createDiff({
+					reference: refPath,
+					current: testPath,
+					diff: diffPath,
+					highlightColor: '#ff00ff', //color to highlight the differences
+					strict: true,//strict comparsion
+				}, function(err) {
 
+					console.log(err);
+
+				});
+			}
 		});
 
-		console.log('createDiff')
+
 
 	})
 
