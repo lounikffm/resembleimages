@@ -20,8 +20,8 @@ const resembleImages = function(pattern, cwd) {
 			current: testPath,
 			diff: diffPath,
 			highlightColor: '#ff00ff', //color to highlight the differences
-			strict: false,//strict comparsion
-			tolerance: 2.5
+			strict: true,//strict comparsion
+			tolerance: 0
 		}, function(error) {});
 
 	})
