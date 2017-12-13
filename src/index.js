@@ -15,7 +15,7 @@ const resembleImages = function(pattern, cwd) {
 		const testDir = cwd.replace('reference', 'test');
 		const diffDir = cwd.replace('reference', 'diff');
 
-		const refPath = cwd + refPath
+		const referencePath = cwd + refPath
 		const testPath = testDir + refPath
 		const diffPath = diffDir + refPath
 
@@ -31,11 +31,11 @@ const resembleImages = function(pattern, cwd) {
     //
 		// });
 
-		looksSame(refPath, testPath, function(error, equal) {
+		looksSame(referencePath, testPath, function(error, equal) {
 			if(equal !== true) {
 				console.log('diff!')
 				looksSame.createDiff({
-					reference: refPath,
+					reference: referencePath,
 					current: testPath,
 					diff: diffPath,
 					highlightColor: '#ff00ff', //color to highlight the differences
