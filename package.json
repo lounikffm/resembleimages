@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "description": "",
   "main": "src/index.js",
-  "bin": "bin/jooniper",
+  "bin": "bin/resembleimages",
   "scripts": {},
   "author": "lounikffm",
   "license": "MIT",
