@@ -8,6 +8,8 @@ const resembleImages = function(pattern, cwd) {
 
 	let paths = glob.sync(pattern, {cwd});
 
+	console.log(paths)
+
 	paths.map((refPath) => {
 
 		const testPath = refPath.replace('reference', 'test');
