@@ -2,6 +2,7 @@
 
 const glob = require("glob")
 const renameExtension = require('rename-extension')
+const looksSame = require("looks-same")
 
 const resembleImages = function(pattern, cwd) {
 
