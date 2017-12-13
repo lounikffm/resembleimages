@@ -5,6 +5,7 @@ const renameExtension = require('rename-extension')
 const looksSame = require('looks-same')
 const fs = require('fs');
 const empty = require('empty-folder');
+const path = require('path');
 
 const resembleImages = function(pattern, cwd, testfolder, difffolder) {
 

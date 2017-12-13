@@ -17,6 +17,7 @@
     "glob": "^7.1.2",
     "looks-same": "^3.2.1",
     "mri": "^1.1.0",
+    "path": "^0.12.7",
     "rename-extension": "^2.0.3"
   }
 }
