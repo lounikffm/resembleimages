@@ -3,33 +3,33 @@
 const glob = require('glob')
 const renameExtension = require('rename-extension')
 const looksSame = require('looks-same')
+const fs = require('fs');
+const empty = require('empty-folder');
 
-const resembleImages = function(pattern, cwd) {
+const resembleImages = function(pattern, cwd, testfolder, difffolder) {
 
 	let paths = glob.sync(pattern, {cwd});
+
+	if (!fs.existsSync(difffolder)){
+		fs.mkdirSync(difffolder);
+	} else {
+		empty(difffolder, false, error);
+	}
 
 	console.log(paths)
 
 	paths.map((refPath) => {
 
-		const testDir = cwd.replace('reference', 'test');
-		const diffDir = cwd.replace('reference', 'diff');
+		const testDir = cwd.replace('reference', testfolder);
+		const diffDir = cwd.replace('reference', difffolder);
 
-		const referencePath = cwd + refPath
-		const testPath = testDir + refPath
-		const diffPath = diffDir + refPath
+		// const referencePath = cwd + refPath
+		// const testPath = testDir + refPath
+		// const diffPath = diffDir + refPath
 
-		// looksSame.createDiff({
-		// 	reference: cwd + refPath,
-		// 	current: testDir + refPath,
-		// 	diff: diffDir + refPath,
-		// 	highlightColor: '#ff00ff', //color to highlight the differences
-		// 	strict: true,//strict comparsion
-		// }, function(err) {
-    //
-		// 	console.log(err);
-    //
-		// });
+		const referencePath = path.join(cwd, refPath)
+		const testPath = path.join(testDir, refPath)
+		const diffPath = path.join(diffDir, refPath)
 
 		looksSame(referencePath, testPath, function(error, equal) {
 			if(equal !== true) {
@@ -55,5 +55,5 @@ const resembleImages = function(pattern, cwd) {
 }
 
 module.exports = {
-		test   : (pattern, cwd) => resembleImages(pattern, cwd)
+		test   : (pattern, cwd, testfolder, difffolder) => resembleImages(pattern, cwd, testfolder, difffolder)
 }

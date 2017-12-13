@@ -6,14 +6,14 @@ const mri    = require('mri')
 
 const resembleImages  = require('./../src/index')
 
-const test = function(pattern, cwd) {
-	resembleImages.test(pattern, cwd)
+const test = function(pattern, cwd, testfolder, difffolder) {
+	resembleImages.test(pattern, cwd, testfolder, difffolder)
 }
 
 const parse = function(argv) {
 
 	// Compile current or specified folder to static files
-	if (argv._[0]==='test') return test(argv._[1], argv._[2] )
+	if (argv._[0]==='test') return test(argv._[1], argv._[2], argv._[3], argv._[4] )
 
 }
 
