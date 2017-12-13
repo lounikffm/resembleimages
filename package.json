@@ -1,0 +1,20 @@
+{
+  "name": "resembleimages",
+  "version": "1.1.0",
+  "description": "",
+  "main": "src/index.js",
+  "bin": "bin/jooniper",
+  "scripts": {},
+  "author": "lounikffm",
+  "license": "MIT",
+  "files": [
+    "bin",
+    "src"
+  ],
+  "dependencies": {
+    "glob": "^7.1.2",
+    "looks-same": "^3.2.1",
+    "mri": "^1.1.0",
+    "rename-extension": "^2.0.3"
+  }
+}
