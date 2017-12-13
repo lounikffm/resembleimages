@@ -1,8 +1,8 @@
 'use strict'
 
-const glob = require("glob")
+const glob = require('glob')
 const renameExtension = require('rename-extension')
-const looksSame = require("looks-same")
+const looksSame = require('looks-same')
 
 const resembleImages = function(pattern, cwd) {
 
@@ -25,7 +25,11 @@ const resembleImages = function(pattern, cwd) {
 			diff: diffDir + refPath,
 			highlightColor: '#ff00ff', //color to highlight the differences
 			strict: true,//strict comparsion
-		}, function(error) {});
+		}, function(err) {
+
+			console.log(err);
+
+		});
 
 		console.log('createDiff')
 
