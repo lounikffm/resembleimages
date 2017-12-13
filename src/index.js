@@ -21,7 +21,6 @@ const resembleImages = function(pattern, cwd) {
 			diff: diffPath,
 			highlightColor: '#ff00ff', //color to highlight the differences
 			strict: true,//strict comparsion
-			tolerance: 0
 		}, function(error) {});
 
 	})
