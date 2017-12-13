@@ -25,11 +25,6 @@ const resembleImages = function(pattern, cwd, testfolder, difffolder) {
 	paths.map((refPath) => {
 
 		const testDir = cwd.replace('reference', testfolder);
-		// const diffDir = cwd.replace('reference', difffolder);
-
-		// const referencePath = cwd + refPath
-		// const testPath = testDir + refPath
-		// const diffPath = diffDir + refPath
 
 		const referencePath = path.join(cwd, refPath)
 		const testPath = path.join(testDir, refPath)
